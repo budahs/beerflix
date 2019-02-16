@@ -1,28 +1,29 @@
 'use strict';
-const API_KEY = 'API key';
 const api = (API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh/api/v1/beers') => {
-    const SEARCH_API_URL = `${API_URL}search/shows?q=`;
-    const SHOWS_URL = `${API_URL}shows`;
-    return {        
-        getShows : async (query) => {           
-            try {
-                const requestUrl = query ? `${SEARCH_API_URL}${query}`: SHOWS_URL;
-                console.log(requestUrl,'-------------->');                
-                const response = await fetch(requestUrl);
-                const datos = await response.json();
-                const mapDatos = datos.map((dato) => {
-                    if(dato.show){
-                        return dato.show;
+    const SEARCH_URL = `${API_URL}?search=`;
+    const BEERS_URL = `${API_URL}`;
+    const BEER_URL = `${API_URL}/`;
+    //const SET_LIKE = `${API_URL}/${ID}/like`;
+    //const SET_COMMENT = `${API_URL}/${ID}/comment`;
+    return {
+        getBeers : async (query) => {
+            try{
+                const requestUrl = query ? `${SEARCH_URL}${query}`: BEERS_URL;
+                const response = await fetch(requestUrl,{
+                    headers:
+                    {
+                        'X-API-KEY' : '1JEZPD1-HSCMEHQ-PJF9AGJ-9HHB74P',
+                        'accept' : 'application/json'
                     }
-                    return dato;
-                })
-                return mapDatos;
+                });
+                const data = await response.json();
+                return data;  
             }catch(e){
                 console.error(e);
                 throw e;
-            } 
+            }    
         }
     };
 };
-consoile.log();
+
 export default api;

@@ -1,20 +1,6 @@
 'use strict';
-const getBeers = async () => {
-    try{
-        const response = await fetch('https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh/api/v1/beers',{
-            headers:
-            {
-                'X-API-KEY' : '1JEZPD1-HSCMEHQ-PJF9AGJ-9HHB74P',
-                'accept' : 'application/json'
-            }
-        });
-        const data = await response.json();
-        return data;  
-    }catch(e){
-        console.error(e);
-        throw e;
-    }    
-};
+import api from './api';
+const {getBeers} = api();
 
 const templateBeer = ({image,name,description,likes,price,beerId}) => `
     <div class="product">
@@ -33,18 +19,31 @@ const templateBeer = ({image,name,description,likes,price,beerId}) => `
     </div>
 `;
 
-const renderBeers = (givenElement,beers) =>{
+const renderBeers = (givenElement,beers,year) =>{
+    if(year){
+        beers = beers.filter(function(beer, index, arr){
+            if(beer.firstBrewed.indexOf(year) >= 0){
+                return beer;
+            }        
+        });        
+    };
     const htmlBlock = beers.slice(0, 12).map((beer,beerIndex) => {
         return templateBeer(beer);
     }).join('');
     givenElement.innerHTML = htmlBlock;
 }
+// const htmlBlock se puede hacer refactor a const htmlBlock = beers.slice(0, 12).map(templateBeer).join('');
 
-const setDOMElements = async () => {
+export const setDOMElements = async (inputData) => {
     try{
-        const fetchBeers = await getBeers();
+        let query ='';let year='';
+        if(inputData){
+            if(inputData.hasOwnProperty("year"))year = inputData.year;
+            if(inputData.hasOwnProperty("search"))query = inputData.search;
+        }                
+        const fetchBeers = await getBeers(query);
         const DOMParent = document.getElementById('products');
-        renderBeers(DOMParent,fetchBeers.beers);
+        renderBeers(DOMParent,fetchBeers.beers,year);
     }catch(e){
         console.error(e);
         throw e;
