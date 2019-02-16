@@ -1,1 +1,43 @@
-.jaime{background:#fff;}
+#products{
+    @extend .container;
+    display:block; 
+    @include tablet {
+        display:grid; grid-template-columns:auto auto;grid-gap: 10px;padding:10px;
+    }
+    @include xLargeDesktop {
+        display:grid; grid-template-columns:1fr 1fr 1fr;
+    } 
+}
+#products .product{
+    display:grid; grid-template-columns:25% 1fr;background:$primary-color-text;border:5px solid $bg-color;border-bottom:0px;
+    header{
+        padding:15px 0px;text-align:center;border-right:1px solid $bg-color;
+        img{display:inline-block;max-height:150px;width:auto;margin:0 auto;max-height:150px;}
+    }    
+    article{
+        display:grid; grid-template-columns:100%;grid-template-rows: auto 1fr auto;position:relative;box-sizing:border-box;
+        h2,p{padding:0px 10px;}
+        h2{font-size:$primary-font-size;color:$primary-color;line-height:35px;margin-bottom:$small-margin;text-transform:uppercase;border-bottom:1px solid $bg-color;}
+        p{padding-bottom:10px;font-size:$parragraph;color:$secondary-text-color;font-weight:500;}
+        footer{
+            display:grid; grid-template-columns:1fr 1fr 1fr;line-height:35px;max-height:35px;font-size:$parragraph;text-transform:uppercase;
+            *{text-align: center;position: relative;}
+            i{
+                display: inline-block;width:auto;line-height: inherit;font-size:$parragraph - .1rem; top:-1px;                   
+                &.fa-thumbs-up{margin-right:10px;}
+                &.fa-external-link-alt{margin-left:10px;}
+                &.fa-euro-sign{margin-left:3px;}
+            }            
+            .details{
+                background:$complementary;
+                &:hover{background:$primary-color-dark;}
+            }
+            .price{background:$primary-color;}
+            .likes{background:$primary-color-light;}
+            .likes,.price,.details{color:$primary-color-text;}
+        }        
+    }
+    @include tablet {
+        border:0px;
+    } 
+}

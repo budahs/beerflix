@@ -1,4 +1,3 @@
 'use strict';
+import './js/beers';
 import './styles/index.scss';
-var a = new Promise();
-console.log('hello!!!!!!!!!!!!!!!!!!!!')

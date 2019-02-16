@@ -1,0 +1,28 @@
+// paleta de color
+$primary-color-dark:   #4d1615;
+$primary-color:        #783f31;
+$primary-color-light:  #ca7521;
+$complementary:        #00617D;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #9E9E9E;
+$primary-text-color:   #212121;
+$secondary-text-color: #757575;
+$divider-color:        #BDBDBD;
+$bg-color:             #f6f6f6;
+
+//margins
+$small-margin:7px;
+$medium-margin:15px;
+
+//fuentes
+$primary-font-size:1rem;
+$parragraph:$primary-font-size - .2rem;
+$icons:$primary-font-size + .5rem;
+$header-h2:$primary-font-size + .2rem;
+$logo-font:$primary-font-size + 2rem;
+//mixins mobile first
+
+$tablet-width:768px;
+$desktop-width:992px;
+$large-desktop-width:1024px;
+$xlarge-desktop-width:1280px;

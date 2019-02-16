@@ -33,6 +33,15 @@ module:{
             test: /\.js$/,
             use: 'babel-loader',
             exclude: /node_modules/
+        },
+        {
+            test: /\.(jpg|png|gif)$/,
+            use:[
+                {
+                    loader: 'file-loader',
+                    options:{}
+                }
+            ]
         }
     ]
 },
