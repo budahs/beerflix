@@ -1,0 +1,6 @@
+#detailSection{
+    @extend .container;
+}
+.image-container{    
+    img{max-height:150px;width:auto;}
+}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Beerflix a new approach to beer!!</title>
+    <title>Beerflix this is your beer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -11,6 +11,8 @@
 </head>
 <body>
     <%= require('html-loader!./templates/search.html') %>    
-    <section id="products"></section>
+    <main>
+        <%= require('html-loader!./templates/beerTemplate.html') %> 
+    </main>
 </body>
 </html>

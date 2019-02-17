@@ -13,7 +13,7 @@ const templateBeer = ({image,name,description,likes,price,beerId}) => `
         <footer>                    
             <div class="likes"><i class="fas fa-thumbs-up"></i><strong>Likes</strong> ${likes}</div>
             <div class="price"><strong>Price</strong> ${price}<i class="fas fa-euro-sign"></i></div>
-            <a href="https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh/api/v1/beers/${beerId}" class="details"><strong>Details</strong><i class="fas fa-external-link-alt"></i></a>
+            <a href="/beer.html?beer=${beerId}" class="details"><strong>Details</strong><i class="fas fa-external-link-alt"></i></a>
         </footer>
     </article>
     </div>
