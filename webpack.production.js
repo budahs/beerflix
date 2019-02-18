@@ -5,9 +5,12 @@ const cleanWebpackPlugin = require('clean-webpack-plugin');
 const miniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
 mode:'production',
-entry: path.join(__dirname, 'src', 'main.js'),
+entry: {
+    app: path.join(__dirname, 'src', 'main.js'),
+    detail: path.join(__dirname, 'src', 'detail.js'),
+},
 output: {
-    filename: 'production-[hash].js',
+    filename: '[name]-bundle.js',
     path: path.resolve(__dirname, 'dist')
 },
 module:{
@@ -35,14 +38,24 @@ module:{
     ]
 },
 plugins:[
-    new cleanWebpackPlugin(['dist']),
+    new cleanWebpackPlugin(['dist']),   
     new htmlPlugin({
-        template: path.join(__dirname,'src','index.html'),
+        template: path.join(__dirname, 'src', 'index.html'),
+        chunks: ['app'],
         minify: {
             collapseWhitespace: true,
             removeComments: true
         }
-      }),
+    }),
+    new htmlPlugin({
+        filename: 'beer.html',
+        template: path.join(__dirname, 'src', 'beer.html'),
+        chunks: ['detail'],
+        minify: {
+            collapseWhitespace: true,
+            removeComments: true
+        }
+    }),
     new miniCssExtractPlugin()
 ]
 };
