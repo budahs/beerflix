@@ -13,7 +13,10 @@ commentForm.addEventListener('submit', async (evt) => {
         const [,id] = window.location.search ? 
         window.location.search.split('=') : [];
         const comment = await createComment(id,quoteInput.value,slug);
-        console.log(comment);
+        const currentDate = new Date();
+        const newComment = ` <div class="comment">"${quoteInput.value}"<span>${currentDate.getFullYear()}-${(currentDate.getMonth() + 1) < 10 ? '0' + (currentDate.getMonth() + 1): currentDate.getMonth()}-${currentDate.getDate() < 10 ? '0' + currentDate.getDate(): currentDate.getDate()}</span></div>`
+        const existComments = document.getElementById('printComments').innerHTML;
+        document.getElementById('printComments').innerHTML = newComment + existComments;
     }catch(e){
         console.error(e);
     }

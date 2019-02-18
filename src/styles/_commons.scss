@@ -2,6 +2,7 @@
 body{background:$bg-color; } 
 main{display:block;width:100%;}
 a{text-decoration: none;outline:none;}
+p{font-size:$parragraph;color:$primary-text-color;font-weight:400;}
 input:focus{outline:none;}
 img{width:100%;max-width:100%;}
 .container{display:block;position:relative;width:100%;max-width:1280px;margin:0 auto;}

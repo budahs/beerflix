@@ -13,15 +13,20 @@ $bg-color:             #f6f6f6;
 //margins
 $small-margin:7px;
 $medium-margin:15px;
+$small-padding:10px;
+$medium-padding:15px;
+$padding:20px;
+$large-padding:25px;
 
 //fuentes
 $primary-font-size:1rem;
-$parragraph:$primary-font-size - .2rem;
+$parragraph:$primary-font-size - .1rem;
 $icons:$primary-font-size + .5rem;
 $header-h2:$primary-font-size + .2rem;
-$logo-font:$primary-font-size + 2rem;
+$logo-font:$primary-font-size + .1rem;
 //mixins mobile first
 
+$smallPhones-width:480px;
 $tablet-width:768px;
 $desktop-width:992px;
 $large-desktop-width:1024px;

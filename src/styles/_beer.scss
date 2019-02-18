@@ -1,6 +1,123 @@
-#detailSection{
-    @extend .container;
+.container{max-width:1024px;}
+header{
+    background:#fff;border-bottom:2px solid $primary-color;padding:$small-padding;
 }
-.image-container{    
-    img{max-height:150px;width:auto;}
+nav{
+    @extend .container;
+    line-height:30px;
+    a{
+        color:$primary-color-light;font-size:$header-h2;text-transform: uppercase; font-weight:bold;
+        i{margin-right:10px;}
+    }
+    #likes{
+        display:inline-block;padding-left:10px;width:25%;float:right;
+        button.likes{
+            @extend .button;    
+            background:$complementary;color:$primary-color-text;line-height:35px;width:100%;
+            i{margin:0px 10px 0px -10px;}
+        }
+    } 
+    @include xSmallPhones{
+        a{font-size:$primary-font-size;}
+        #likes{width:35%;}
+    }
+}
+#detail header{
+    background:$primary-color-light;color:$primary-color-text;min-height:60px;display:flex;align-items: center;flex-direction:row;
+    h1{
+        width:100%;float:right;font-size:$logo-font;text-transform: uppercase;padding-right:10px;
+        i{margin:0px 15px 0px 5px;}
+    }
+    @include xSmallPhones{        
+        h1{
+            font-size:$primary-font-size - .05rem;
+            i{margin-left:15px;}
+        }
+    }
+}
+#detail .content{
+    @extend .container;
+    display:table;background:$primary-color-text;padding:$small-padding;
+    .image-container{ 
+        display:block;position:relative;width:25%;float:left;padding:10px 0px;background:$bg-color;border-radius:4px;border:2px solid $primary-color-dark;  
+        img{display:block;max-height:150px;width:auto;margin:0 auto;}
+    }
+    .beerData{
+        display:block;position:relative;width:75%;float:right;padding:10px $medium-padding 0px $large-padding;        
+        }
+    .properties{
+        display:block;position:relative;clear:both;width:100%;text-align:right;top:$small-padding;
+        span{
+            display:inline-block;position: relative;padding:$small-margin;color:$primary-color-text;text-align:center;
+            &.price{background:$primary-color;width:25%;}
+            &.likes{background:$primary-color-light;width:25%;}
+            &.brewed{background:$divider-color;width:50%;}
+        }
+    }
+    @include tablet{
+        .properties{
+            top:-30px;
+            span{            
+                &.price{width:20%;}
+                &.likes{width:20%;}
+                &.brewed{background:$divider-color;width:33%;}
+            }
+        }
+    }
+    @include largeDesktop{
+        margin-top:$medium-margin;
+    }
+    @include xSmallPhones{
+        .image-container{  
+            top:10px;left:7px;width:28%;         
+            img{max-height:130px;}            
+        }
+        .beerData{
+            width:72%;padding:10px $medium-padding 0px $medium-padding;
+        }
+        .properties span.brewed{width:100%;margin-top:$small-padding;}
+        .properties span.likes,.properties span.price{width:50%;}
+    }
+}
+
+#detailSection .metadata{
+    @extend .container;
+    display:table;background:$primary-color-text;padding-top:20px;   
+    & > div{width:100%;padding:0px $medium-padding;}  
+    #quote-form{
+        display:grid;grid-template-columns:1fr;
+        .commentsLeft{
+            width:100%;margin-bottom:$small-margin;            
+            label{
+                display:block;width:100%;line-height:50px;border-bottom:1px solid $divider-color;
+                i{margin-right:$medium-margin;}
+            }
+            input,label{display:block;float:left;line-height:25px;}
+        }        
+        .commentsRight{
+            input{padding:0px $small-margin;}
+            button{float:right;border:2px solid $bg-color;border-radius:4px;padding:0px $small-padding;background: $complementary;}
+            input,button{line-height:35px;margin:$small-margin 0px;border-radius:4px;border:1px solid $divider-color;width:49%;}
+        }
+        
+    }
+    #printComments{
+        display:grid; grid-template-columns:1fr; background:#f1f1f1;margin-top:$medium-margin;
+        & > div {
+            border:2px solid #fff; padding:30px 15px 20px 15px;position:relative;font-size:$parragraph;color:$secondary-text-color;font-weight:bold;
+            span{display:block;position:absolute; top:0%;right:0%;padding:5px $small-padding;font-size:$parragraph - .2rem;background:$primary-color-text;color:$primary-color-light; }
+        }
+    }
+    @include tablet{
+        padding-top:0px;top:-15px;
+        & > div{width:75%;float:right;} 
+        #printComments{
+            grid-template-columns:1fr 1fr;
+        }
+    }
+    @include xSmallPhones{
+        grid-template-columns:28% 1fr;grid-gap:15px;margin-top:0px;
+        input{margin:$small-margin 0px;}
+        input,button{width:100% !important;}
+    }
 }

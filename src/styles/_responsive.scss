@@ -1,3 +1,8 @@
+@mixin xSmallPhones {
+    @media(max-width: #{$smallPhones-width}){
+        @content;
+    }
+}
 @mixin tablet {
     @media(min-width: #{$tablet-width}){
         @content;

@@ -10,7 +10,14 @@
     <script src="/dist/bundle.js"></script>
 </head>
 <body>
-    <%= require('html-loader!./templates/search.html') %>    
+    <header>
+        <nav>
+            <a href="/"><i class="fas fa-home"></i>Search more beers</a>
+            <form action="" id="likes">
+                <button type="submit" class="button likes"><i class="fas fa-thumbs-up"></i>Like this</button>
+            </form>
+        </nav>
+    </header>   
     <main>
         <%= require('html-loader!./templates/beerTemplate.html') %> 
     </main>
