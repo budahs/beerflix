@@ -1,0 +1,393 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  /*font: inherit;*/
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  font-family: 'Roboto', Verdana;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+body {
+  background: #f6f6f6; }
+
+main {
+  display: block;
+  width: 100%; }
+
+a {
+  text-decoration: none;
+  outline: none; }
+
+p {
+  font-size: 0.9rem;
+  color: #212121;
+  font-weight: 400; }
+
+input:focus {
+  outline: none; }
+
+img {
+  width: 100%;
+  max-width: 100%; }
+
+.container, #search, nav, #detail .content, #detailSection .metadata {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto; }
+
+.button, #search button, nav #likes button.likes {
+  border: 0px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #FFFFFF; }
+
+#searchSection {
+  position: relative; }
+
+#searchSection picture:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0%;
+  top: 0%;
+  background: rgba(0, 0, 0, 0) -webkit-gradient(linear, left top, left bottom, from(rgba(79, 19, 13, 0.4)), to(rgba(82, 21, 8, 0.4))) repeat scroll 0% 0%;
+  background: rgba(0, 0, 0, 0) -webkit-linear-gradient(top, rgba(79, 19, 13, 0.4), rgba(82, 21, 8, 0.4)) repeat scroll 0% 0%;
+  background: rgba(0, 0, 0, 0) -o-linear-gradient(top, rgba(79, 19, 13, 0.4), rgba(82, 21, 8, 0.4)) repeat scroll 0% 0%;
+  background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(79, 19, 13, 0.4), rgba(82, 21, 8, 0.4)) repeat scroll 0% 0%; }
+
+#searchSection .filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+#search {
+  text-align: center; }
+
+#search input {
+  font-weight: bold; }
+  #search input.year {
+    width: 25%;
+    border-right: 0px;
+    border-left: 0px; }
+  #search input.beer {
+    width: 55%;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px; }
+  @media (min-width: 768px) {
+    #search input.year {
+      width: 20%; }
+    #search input.beer {
+      width: 50%; } }
+  @media (min-width: 1280px) {
+    #search input.year {
+      width: 15%; }
+    #search input.beer {
+      width: 35%; } }
+
+#search button {
+  width: 10%;
+  min-width: 50px;
+  background: #ca7521;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-left: 0px; }
+  #search button span {
+    display: none; }
+  @media (min-width: 768px) {
+    #search button {
+      width: 20%; }
+      #search button span {
+        display: inline-block; }
+      #search button i {
+        margin-right: 20px; } }
+
+#search input, #search button {
+  display: inline-block;
+  line-height: 35px;
+  padding: 0px 15px;
+  border: 3px solid #f3f3f3; }
+  @media (min-width: 992px) {
+    #search input, #search button {
+      font-size: 1rem;
+      line-height: 45px; } }
+
+.container, #search, nav, #detail .content, #detailSection .metadata {
+  max-width: 1024px; }
+
+header {
+  background: #fff;
+  border-bottom: 2px solid #783f31;
+  padding: 10px; }
+
+nav {
+  line-height: 30px; }
+  nav a {
+    color: #ca7521;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold; }
+    nav a i {
+      margin-right: 10px; }
+  nav #likes {
+    display: inline-block;
+    padding-left: 10px;
+    width: 25%;
+    float: right; }
+    nav #likes button.likes {
+      background: #00617D;
+      color: #FFFFFF;
+      line-height: 35px;
+      width: 100%; }
+      nav #likes button.likes i {
+        margin: 0px 10px 0px -10px; }
+  @media (max-width: 480px) {
+    nav a {
+      font-size: 1rem; }
+    nav #likes {
+      width: 35%; } }
+
+#detail header {
+  background: #ca7521;
+  color: #FFFFFF;
+  min-height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+  #detail header h1 {
+    width: 100%;
+    float: right;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    padding-right: 10px; }
+    #detail header h1 i {
+      margin: 0px 15px 0px 5px; }
+  @media (max-width: 480px) {
+    #detail header h1 {
+      font-size: 0.95rem; }
+      #detail header h1 i {
+        margin-left: 15px; } }
+
+#detail .content {
+  display: table;
+  background: #FFFFFF;
+  padding: 10px; }
+  #detail .content .image-container {
+    display: block;
+    position: relative;
+    width: 25%;
+    float: left;
+    padding: 10px 0px;
+    background: #f6f6f6;
+    border-radius: 4px;
+    border: 2px solid #4d1615; }
+    #detail .content .image-container img {
+      display: block;
+      max-height: 150px;
+      width: auto;
+      margin: 0 auto; }
+  #detail .content .beerData {
+    display: block;
+    position: relative;
+    width: 75%;
+    float: right;
+    padding: 10px 15px 0px 25px; }
+  #detail .content .properties {
+    display: block;
+    position: relative;
+    clear: both;
+    width: 100%;
+    text-align: right;
+    top: 10px; }
+    #detail .content .properties span {
+      display: inline-block;
+      position: relative;
+      padding: 7px;
+      color: #FFFFFF;
+      text-align: center; }
+      #detail .content .properties span.price {
+        background: #783f31;
+        width: 25%; }
+      #detail .content .properties span.likes {
+        background: #ca7521;
+        width: 25%; }
+      #detail .content .properties span.brewed {
+        background: #BDBDBD;
+        width: 50%; }
+  @media (min-width: 768px) {
+    #detail .content .properties {
+      top: -30px; }
+      #detail .content .properties span.price {
+        width: 20%; }
+      #detail .content .properties span.likes {
+        width: 20%; }
+      #detail .content .properties span.brewed {
+        background: #BDBDBD;
+        width: 33%; } }
+  @media (min-width: 1024px) {
+    #detail .content {
+      margin-top: 15px; } }
+  @media (max-width: 480px) {
+    #detail .content .image-container {
+      top: 10px;
+      left: 7px;
+      width: 28%; }
+      #detail .content .image-container img {
+        max-height: 130px; }
+    #detail .content .beerData {
+      width: 72%;
+      padding: 10px 15px 0px 15px; }
+    #detail .content .properties span.brewed {
+      width: 100%;
+      margin-top: 10px; }
+    #detail .content .properties span.likes, #detail .content .properties span.price {
+      width: 50%; } }
+
+#detailSection .metadata {
+  display: table;
+  background: #FFFFFF;
+  padding-top: 20px; }
+  #detailSection .metadata > div {
+    width: 100%;
+    padding: 0px 15px; }
+  #detailSection .metadata #quote-form {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr; }
+    #detailSection .metadata #quote-form .commentsLeft {
+      width: 100%;
+      margin-bottom: 7px; }
+      #detailSection .metadata #quote-form .commentsLeft label {
+        display: block;
+        width: 100%;
+        line-height: 50px;
+        border-bottom: 1px solid #BDBDBD; }
+        #detailSection .metadata #quote-form .commentsLeft label i {
+          margin-right: 15px; }
+      #detailSection .metadata #quote-form .commentsLeft input, #detailSection .metadata #quote-form .commentsLeft label {
+        display: block;
+        float: left;
+        line-height: 25px; }
+    #detailSection .metadata #quote-form .commentsRight input {
+      padding: 0px 7px; }
+    #detailSection .metadata #quote-form .commentsRight button {
+      float: right;
+      border: 2px solid #f6f6f6;
+      border-radius: 4px;
+      padding: 0px 10px;
+      background: #00617D; }
+    #detailSection .metadata #quote-form .commentsRight input, #detailSection .metadata #quote-form .commentsRight button {
+      line-height: 35px;
+      margin: 7px 0px;
+      border-radius: 4px;
+      border: 1px solid #BDBDBD;
+      width: 49%; }
+  #detailSection .metadata #printComments {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    background: #f1f1f1;
+    margin-top: 15px; }
+    #detailSection .metadata #printComments > div {
+      border: 2px solid #fff;
+      padding: 30px 15px 20px 15px;
+      position: relative;
+      font-size: 0.9rem;
+      color: #757575;
+      font-weight: bold; }
+      #detailSection .metadata #printComments > div span {
+        display: block;
+        position: absolute;
+        top: 0%;
+        right: 0%;
+        padding: 5px 10px;
+        font-size: 0.7rem;
+        background: #FFFFFF;
+        color: #ca7521; }
+  @media (min-width: 768px) {
+    #detailSection .metadata {
+      padding-top: 0px;
+      top: -15px; }
+      #detailSection .metadata > div {
+        width: 75%;
+        float: right; }
+      #detailSection .metadata #printComments {
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) {
+    #detailSection .metadata {
+      -ms-grid-columns: 28% 15px 1fr;
+      grid-template-columns: 28% 1fr;
+      grid-gap: 15px;
+      margin-top: 0px; }
+      #detailSection .metadata input {
+        margin: 7px 0px; }
+      #detailSection .metadata input, #detailSection .metadata button {
+        width: 100% !important; } }
+
